@@ -1,4 +1,7 @@
 # Bon_Voyage
+
+*Created during HackDuke - a 24 hour hackathon Nov 8-9, 2015*
+
 The Inspiration
 
 A lot of people, especially women and people of marginalized identities, feel unsafe traveling alone late at night. One of the main fears is that if a cab or an uber were to stray from the route and head in the wrong direction, there is little that the passenger can do to protect themselves. Our app exists to address that fear.
