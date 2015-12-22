@@ -1,0 +1,66 @@
+<!doctype html>
+<html>
+<head>
+	<style>
+		h1{
+		text-align:center;
+		font-size:40px;
+	}
+		body {
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+	font-size: 180%;
+  background-image: url("background_image.jpg");
+}
+#outPopUp{
+     position:absolute;
+     width:300px;
+     height:200px;
+     z-index:15;
+	 top:20%;
+     left:50%;
+     margin:-100px 0 0 -150px;
+}
+input[type=submit] {
+  border: none;
+  height: 50px;
+  width: 300px
+}
+	</style>
+</head>
+
+<body>
+<div id="outPopUp">
+<h1>Input your Addresses</h1>
+<form>
+Home:<br>
+<input type="text" id="home" placeholder = "ex: 123 John Drive, Durham, NC 27708" style="font-size:18pt;height:50px;width: 300px;">
+<br>
+Work:<br>
+<input type="text" id="work" placeholder = "ex: 123 John Drive, Durham, NC 27708" style="font-size:18pt;height:50px;width: 300px;">
+<br>
+School:<br>
+<input type="text" id="school" placeholder = "ex: 123 John Drive, Durham, NC 27708" style="font-size:18pt;height:50px;width: 300px;">
+<br>
+<br><br>
+</form>
+<a href="choosetravel.html"><input type="submit" id="submit" value="Submit"></a>
+</div>
+</body>
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+<script>
+    $("#submit").click(function(){
+      var homeAddress = $("#home").val();
+      if (homeAddress != ""){
+        localStorage.setItem("home", homeAddress);
+      }
+      var workAddress = $("#work").val();
+      if (workAddress != ""){
+        localStorage.setItem("work", workAddress);
+      }
+      var schoolAddress = $("#school").val();
+      if (schoolAddress != ""){
+        localStorage.setItem("school", schoolAddress);
+      }
+    });
+</script>
+</html>

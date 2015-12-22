@@ -1,0 +1,91 @@
+<!doctype html>
+<html>
+<head>
+<title> Map </title>
+<script src = "app.js"></script>
+</head>
+<body>
+<header>
+<br>
+<h1> Bon Voyage! </h1>
+</header>
+<main>
+<meta name="viewport" content="initial-scale=1.0">
+    <meta charset="utf-8">
+<body>
+    <div id="map"></div>
+</div>
+<!--bootstrap-->
+<div id = "interface" >
+<div class= "destination">
+Destination: <br>
+<input type="text" name="destination" style="font-size:18pt;height:50px;width: 300px;">
+</div>
+<br>
+<button id = "starter"> Start trip timer </button>
+<span id = "countdown"></span>
+</div>
+</main>
+</body>
+<style>
+ html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+.phonenumber::-webkit-input-placeholder {
+text-align: center;
+}
+#coordinates::-webkit-input-placeholder {
+text-align: center;
+}
+
+body {
+font-family: sans-serif;
+font-size: 40px;
+margin:auto;
+background-image: url("background_image.jpg");
+}
+
+h1 {
+margin: 0;
+text-align: center;
+width:100%;
+position: absolute;
+}
+
+.destination {
+    text-align: center;
+}
+
+#map {
+text-align: center;
+/*background-color: teal;*/
+min-height: 500px;
+margin-bottom: 30px;
+}
+#coordinates {
+display: block;
+margin:auto;
+margin-bottom: 10px;
+} 
+#lastNumber {
+margin-bottom: 10px;
+}
+#starter {
+display: block;
+margin:auto;
+/*width: 50%;*/
+font-size: 40px;
+}
+#countdown {
+margin: auto;
+display:block;
+}
+</style>
+<body>
+   
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB4jTP5vJtNKm6z6E_NnXm5HadNSrUwuN8&callback=initMap"
+        async defer></script>
+  </body>
+</html>

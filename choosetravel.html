@@ -1,0 +1,104 @@
+<!doctype html>
+<html>
+<head>
+	<title>Travel Type</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css"></link>
+</head>
+<body>
+	<div>
+		<h1>Method of Travel</h1>
+		<div class="buttons">
+			<a href="cardetails.html"><button type="button" id="taxi"><i class="fa fa-taxi"></i></button></a>
+			<p>TAXI</p>
+		</div>
+		<div class="buttons">
+			<a href="choosecontacts.html"><button type="button" id="walk"><i class="fa fa-male"></i></button></a>
+			<p>WALK</p>
+		</div>
+	</div>
+</body>
+<style>
+	h1{
+		text-align:center;
+		font-size:80px;
+	}
+		body {
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+	background-image: url("background_image.jpg");
+}
+	div:not(.buttons){
+		width:605px;
+		margin:150px auto 0px;
+	}
+	.buttons{
+		width:300px;
+		margin:0;
+		display: inline-block;
+	} 
+	
+	button {
+		width: 200px;
+		height: 200px;
+		padding:0px 0px;
+		margin: 10px 50px 0px 50px;
+		font-size:120px;
+		
+		/*
+		CONTRAST RATIO - 
+		*/
+		-moz-box-shadow:inset 0px 1px 0px 0px #29bbff;
+		-webkit-box-shadow:inset 0px 1px 0px 0px #29bbff;
+		box-shadow:inset 0px 1px 0px 0px #29bbff;
+		background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #2dabf9), color-stop(1, #0688fa));
+		background:-moz-linear-gradient(top, #2dabf9 5%, #0688fa 100%);
+		background:-webkit-linear-gradient(top, #2dabf9 5%, #0688fa 100%);
+		background:-o-linear-gradient(top, #2dabf9 5%, #0688fa 100%);
+		background:-ms-linear-gradient(top, #2dabf9 5%, #0688fa 100%);
+		background:linear-gradient(to bottom, #2dabf9 5%, #0688fa 100%);
+		filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#2dabf9', endColorstr='#0688fa',GradientType=0);
+		background-color:#2dabf9;
+		-moz-border-radius:6px;
+		-webkit-border-radius:6px;
+		border-radius:6px;
+		border:1px solid #0b0e07;
+		display:inline-block;
+		cursor:pointer;
+		color:#ffffff;
+		text-decoration:none;
+		text-shadow:0px 1px 0px #263666;
+	}
+	button:hover {
+		background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #0688fa), color-stop(1, #2dabf9));
+		background:-moz-linear-gradient(top, #0688fa 5%, #2dabf9 100%);
+		background:-webkit-linear-gradient(top, #0688fa 5%, #2dabf9 100%);
+		background:-o-linear-gradient(top, #0688fa 5%, #2dabf9 100%);
+		background:-ms-linear-gradient(top, #0688fa 5%, #2dabf9 100%);
+		background:linear-gradient(to bottom, #0688fa 5%, #2dabf9 100%);
+		filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#0688fa', endColorstr='#2dabf9',GradientType=0);
+		background-color:#0688fa;
+	}
+	button:active {
+		position:relative;
+		top:1px;
+	}
+	button:focus{
+		outline:none;
+	}
+	
+	p {
+		text-align:center;
+		font-size:50px;
+		margin:10px 0 0;
+		font-family:arial;
+	}
+</style>
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+<script>
+	$("#taxi").click(function(){
+		localStorage.setItem("taxi", true);
+	});
+	$("#walk").click(function(){
+		localStorage.setItem("taxi", false);
+	});
+</script>	
+</html>

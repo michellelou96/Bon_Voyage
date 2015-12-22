@@ -1,0 +1,65 @@
+<!doctype html>
+<html>
+<head>
+	<style>
+		h1{
+		text-align:center;
+		font-size:40px;
+	}
+		body {
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+	font-size: 250%;
+  background-image: url("background_image.jpg");
+}
+#outPopUp{
+     position:absolute;
+     width:300px;
+     height:200px;
+     z-index:15;
+     top:20%;
+     left:50%;
+     margin:-100px 0 0 -150px;
+}
+input[type=checkbox]
+{
+  /* Double-sized Checkboxes */
+  -ms-transform: scale(2); /* IE */
+  -moz-transform: scale(2); /* FF */
+  -webkit-transform: scale(2); /* Safari and Chrome */
+  -o-transform: scale(2); /* Opera */
+  padding: 10px;
+}
+input[type=submit] {
+  border: none;
+  height: 50px;
+  width: 300px
+}
+		</style>
+</head>
+
+
+<body>
+<div id="outPopUp">
+<h1>Choose Contacts</h1>
+<form>
+<input type="checkbox" id="contact1" value="Mom" /> <span class="Mom">Mom</span>
+<br>
+<input type="checkbox" id="contact2" value="Dad" /> <span class="Dad">Dad</span>
+<br>
+<input type="checkbox" id="contact3" value="Larissa" /> <span class="Larry">Larissa</span>
+<br>
+<input type="checkbox" id="contact4" value="Michelle"> <span class="Mitchell">Michelle</span>
+<br>
+<input type="checkbox" id="contact5" value="Jenn"> <span class="Jenn">Jennifer</span>
+<br>
+<input type="checkbox" id="contact6" value="Anahita"> <span class="Ana">Anahita</span>
+<br><br>
+</form>
+<a href="destination.html"><input type="submit" id="submit" value="Submit"></a>
+</div>
+</body>
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+<script>
+    localStorage.setItem("message", localStorage.getItem("email1"));
+</script>
+</html>

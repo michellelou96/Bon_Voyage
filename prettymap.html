@@ -1,0 +1,178 @@
+<!doctype html>
+<html>
+<head>
+	<title> Hackathon Project </title>
+	<!--<script src = "app.js"></script>-->
+</head>
+<body>
+	<header>
+		<h1> Bon Voyage! </h1>
+	</header>
+	<main>
+		<meta name="viewport" content="initial-scale=1.0">
+    	<meta charset="utf-8">
+		<body>
+    	<div id="map"></div>
+		
+		</div>
+		<div id = "interface" >
+			<!--<input id = "coordinates" placeholder = "input destination"></span>-->
+			<input type="text" input id = "coordinates" name="destination" style="font-size:18pt;height:50px;width: 300px;">
+			
+			<button id = "starter"> Start trip timer </button>
+			<span id = "countdown"></span>
+			<a href="end.html"><button id = "ender" style="font-size:18pt;height:50px;width: 300px;"> Destination Reached </button></a>
+		</div>
+	</main>
+</body>
+<style>
+ html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+.phonenumber::-webkit-input-placeholder {
+text-align: center;
+}
+#coordinates::-webkit-input-placeholder {
+text-align: center;
+}
+
+body {
+font-family: sans-serif;
+font-size: 40px;
+margin:auto;
+background-image: url("background_image.jpg");
+}
+
+h1 {
+margin: 0;
+text-align: center;
+width:100%;
+position: absolute;
+}
+
+.destination {
+    text-align: center;
+}
+
+#map {
+text-align: center;
+min-height: 500px;
+margin-bottom: 30px;
+}
+#coordinates {
+display: block;
+margin:auto;
+margin-bottom: 10px;
+} 
+#lastNumber {
+margin-bottom: 10px;
+}
+#starter {
+display: block;
+margin:auto;
+/*width: 50%;*/
+font-size: 40px;
+margin-bottom: 10px;
+}
+#countdown {
+margin: auto;
+display:block;
+}
+#ender{
+display: block;
+margin: auto;  
+font-size: 40px;  
+}
+</style>
+<body>
+   
+<script>
+
+document.querySelector("#starter").addEventListener("click",timer);
+
+var map;
+function initMap() {
+  map = new google.maps.Map(document.getElementById('map'), {
+    center: {lat: -34.397, lng: 150.644},
+    zoom: 8
+  });
+  var infoWindow = new google.maps.InfoWindow({map: map});
+
+  // Try HTML5 geolocation.
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(function(position) {
+      var pos = {
+        lat: position.coords.latitude,
+        lng: position.coords.longitude
+      };
+
+      infoWindow.setPosition(pos);
+      infoWindow.setContent('Location found.');
+      map.setCenter(pos);
+    }, function() {
+      handleLocationError(true, infoWindow, map.getCenter());
+    });
+  } else {
+    // Browser doesn't support Geolocation
+    handleLocationError(false, infoWindow, map.getCenter());
+  }
+}
+
+function handleLocationError(browserHasGeolocation, infoWindow, pos) {
+  infoWindow.setPosition(pos);
+  infoWindow.setContent(browserHasGeolocation ?
+                        'Error: The Geolocation service failed.' :
+                        'Error: Your browser doesn\'t support geolocation.');
+
+}
+
+function timer(){
+  setTimeout(firstAlert, 10000);
+  setTimeout(secondAlert, 20000);
+  setTimeout(finalAlert, 30000);
+}
+
+function firstAlert(){
+
+	alert("Your expected arrival time has increased by 5 minutes.");
+}
+
+function secondAlert(){
+
+	alert("Your expected arrival time has increased by 10 minutes.");
+}
+
+function finalAlert(){
+  alert("Your expected arrival time has increased by 15 minutes. A message will be sent to your emergency contacts.")
+  $.ajax({
+  type: 'POST',
+  url: 'https://mandrillapp.com/api/1.0/messages/send.json',
+  data: {
+    "key": 'PH-R2UpE5BUoYfQNX5pX5Q',
+    "message": {
+      'from_email': 'jennpark96@gmail.com',
+      'to': [
+          {
+            'email': localSotrage.getItem("message"),
+            'type': 'to'
+          },
+        ],
+      'autotext': 'true',
+      'subject': 'EMERGENCY:'+myName+"'s Latest Trip",
+      'html': "Hi, you were listed as" + localStorage.getItem("myname") + "'s emergency contact. Something is unusual about their most recent trip. Some information about the trip is detailed below. Vehicle license plate number:" + localStorage.getItem("license plate") +
+      "Make and model" + localStorage.getItem("carmake") + "Car Model:" + localStorage.getItem("carmodel") + "Car color" + localStorage.getItem("carcolor") + ". Last known location" + localStorage.getItem("destination") + ". Please take the appropriate steps to ensure their safety."
+    }
+  }
+ }).done(function(response) {
+   console.log(response); // if you're into that sorta thing
+ }); 
+}
+
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB4jTP5vJtNKm6z6E_NnXm5HadNSrUwuN8&callback=initMap"
+        async defer></script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+</body>
+</html>

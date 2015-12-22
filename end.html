@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+	<head>
+		<title>End</title>
+		<link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+	</head>
+	<body>
+		<div>
+			<h1>Congrats!</h1> <h1> You've reached <br> your destination. </h1>
+		</div>
+	</body>
+	
+	<style>
+		h1 {
+	text-align: center;
+	font-family: Pacifico;
+	font-size: 100px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: bold;
+	line-height: 163.7px;
+	color: darkblue;
+}
+		body {
+	background-image: url("background_image.jpg");
+}	
+	</style>
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+<script>
+	localStorage.removeItem("message");
+	localStorage.removeItem("destination");
+	localStorage.removeItem("taxi");
+	if (localStorage.getItem("licenseplate") != null){
+		localStorage.removeItem("licenseplate");
+	}
+	if (localStorage.getItem("company") != null){
+		localStorage.removeItem("company");
+	}
+	if (localStorage.getItem("carmake") != null){
+		localStorage.removeItem("carmake");
+	}
+	if (localStorage.getItem("carmodel") != null){
+		localStorage.removeItem("carmodel");
+	}
+	if (localStorage.getItem("carcolor") != null){
+		localStorage.removeItem("carcolor");
+	}
+	if (localStorage.getItem("otherdata") != null){
+		localStorage.removeItem("otherdata");
+	}
+</script>
+</html>

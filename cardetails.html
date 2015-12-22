@@ -1,0 +1,104 @@
+<!doctype html>
+<html>
+<head>
+	<style>
+		h1{
+		text-align:center;
+		font-size:40px;
+	}
+		body {
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+    font-size: 180%;
+    background-image: url("background_image.jpg");
+}
+#outPopUp{
+     position:absolute;
+     width:300px;
+     height:200px;
+     z-index:15;
+	 top:20%;
+     left:50%;
+     margin:-100px 0 0 -150px;
+}
+input[type=submit] {
+  border: none;
+  height: 50px;
+  width: 300px
+}
+	</style>
+</head>
+
+<body>
+<div id="outPopUp">
+<h1>Tell us about the car</h1>
+<form>
+License Plate #:<br>
+<input type="text" id="licenseplate" placeholder = "XXXXXX" style="font-size:18pt;height:50px;width: 300px;">
+<br>
+Cab Company:<br>
+<input type="text" id="cabcompany" placeholder = "ex: Uber, Charlene's Safe Rides'" style="font-size:18pt;height:50px;width: 300px;">
+<br>
+Car Make:<br>
+<input type="text" id="carmake" placeholder = "ex: Honda, Toyota, Mercedes" style="font-size:18pt;height:50px;width: 300px;">
+<br>
+Car Body/Model:<br>
+<input type="text" id="carmodel" placeholder = "ex: Station Wagon, Mini-SUV" style="font-size:18pt;height:50px;width: 300px;">
+<br>
+Color:<br>
+<input type="text" id="color" placeholder = "ex: Silver, Black, Dark Blue" style="font-size:18pt;height:50px;width: 300px;">
+<br>
+Other:<br>
+<input type="text" id="other" placeholder = "Any other details about the car" style="font-size:18pt;height:50px;width: 300px;">
+<br><br>
+</form>
+<a href="choosecontacts.html"><input type="submit" id="submit" value="Submit"></a>
+</div>
+</body>
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+<script>
+    $("#submit").click(function(){
+      var licenseplate = $("#licenseplate").val();
+      var company = $("#cabcompany").val();
+      var carmake = $("#carmake").val();
+      var carmodel = $("#carmodel").val();
+      var carcolor = $("#carcolor").val();
+      var otherdata = $("#other").val();
+      if (licenseplate != "" && licenseplate != null){
+        localStorage.setItem("licenseplate", licenseplate);
+      }
+      else{
+        localStorage.setItem("licenseplate", "");
+      };
+      if (company != "" && company != null){
+        localStorage.setItem("company", company);
+      }
+      else{
+        localStorage.setItem("company", "");
+      };
+      if (carmake != "" && carmake != null){
+        localStorage.setItem("carmake", carmake);
+      }
+      else{
+        localStorage.setItem("carmake", "");
+      };
+      if (carmodel != "" && carmodel != null){
+        localStorage.setItem("carmodel", carmodel);
+      }
+      else{
+        localStorage.setItem("carmodel", "");
+      };
+      if (carcolor != "" && carcolor != null){
+        localStorage.setItem("carcolor", carcolor);
+      }
+      else{
+        localStorage.setItem("carcolor", "");
+      };
+      if (otherdata != "" && otherdata != null){
+        localStorage.setItem("otherdata", otherdata);
+      }
+      else{
+        localStorage.setItem("otherdata", "");
+      };
+    });
+</script>
+</html>

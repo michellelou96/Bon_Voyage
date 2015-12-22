@@ -1,0 +1,110 @@
+<!doctype html>
+<html>
+<head>
+	<style>
+		h1{
+		text-align:center;
+		font-size:40px;
+	}
+		body {
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+	font-size: 180%;
+  background-image: url("background_image.jpg");
+}
+#outPopUp{
+     position:absolute;
+     width:300px;
+     height:200px;
+     z-index:15;
+     top:20%;
+     left:50%;
+     margin:-100px 0 0 -150px;
+}
+input[type=submit] {
+  border: none;
+  height: 50px;
+  width: 300px
+}
+	</style>
+</head>
+
+<body>
+<div id="outPopUp">
+<h1>Input your Contacts</h1>
+<form>
+Contact #1 (Default):<br>
+<input type="text" id="contact1" placeholder = "name" style="font-size:18pt;height:50px;width: 300px;">
+<br>
+<input type="email" id="usermail1" placeholder="name@domain.com" required style="font-size:18pt;height:50px;width: 300px;"></li>
+<br>
+Contact #2:<br>
+<input type="text" id="contact2" placeholder = "name" style="font-size:18pt;height:50px;width: 300px;">
+<br>
+<input type="email" id="usermail2" placeholder="name@domain.com" required style="font-size:18pt;height:50px;width: 300px;"></li>
+<br>
+Contact #3:<br>
+<input type="text" id="contact3" placeholder = "name" style="font-size:18pt;height:50px;width: 300px;">
+<br>
+<input type="email" id="usermail3" placeholder="name@domain.com" required style="font-size:18pt;height:50px;width: 300px;"></li>
+<br>
+Contact #4:<br>
+<input type="text" id="contact4" placeholder = "name" style="font-size:18pt;height:50px;width: 300px;">
+<br>
+<input type="email" id="usermail4" placeholder="name@domain.com" required style="font-size:18pt;height:50px;width: 300px;"></li>
+<br>
+Contact #5:<br>
+<input type="text" id="contact5" placeholder = "name" style="font-size:18pt;height:50px;width: 300px;">
+<br>
+<input type="email" id="usermail5" placeholder="name@domain.com" required style="font-size:18pt;height:50px;width: 300px;"></li>
+<br>
+Contact #6:<br>
+<input type="text" id="contact6" placeholder = "name" style="font-size:18pt;height:50px;width: 300px;">
+<br>
+<input type="email" id="usermail6" placeholder="name@domain.com" required style="font-size:18pt;height:50px;width: 300px;"></li>
+<br><br>
+</form>
+<a href="inputaddresses.html"><input type="submit" id="submit" value="Submit"></a>
+</div>
+</body>
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+<script>
+    $("#submit").click(function(){
+      var contact1 = $("#contact1").val();
+      var email1 = $("#usermail1").val();
+      var contact2 = $("#contact2").val();
+      var email2 = $("#usermail2").val();
+      var contact3 = $("#contact3").val();
+      var email3 = $("#usermail3").val();
+      var contact4 = $("#contact4").val();
+      var email4 = $("#usermail4").val();
+      var contact5 = $("#contact5").val();
+      var email5 = $("#usermail5").val();
+      var contact6 = $("#contact6").val();
+      var email6 = $("#usermail6").val();
+      if (contact1 != "" && email1 != ""){
+        localStorage.setItem("contact1", contact1);
+        localStorage.setItem("email1", email1);
+      };
+      if (contact2 != "" && email2 != ""){
+        localStorage.setItem("contact2", contact2);
+        localStorage.setItem("email2", email2);
+      };
+      if (contact3 != "" && email3 != ""){
+        localStorage.setItem("contact3", contact3);
+        localStorage.setItem("email3", email3);
+      };
+      if (contact4 != "" && email4 != ""){
+        localStorage.setItem("contact4", contact4);
+        localStorage.setItem("email4", email4);
+      };
+      if (contact5 != "" && email5 != ""){
+        localStorage.setItem("contact5", contact5);
+        localStorage.setItem("email5", email5);
+      };
+      if (contact6 != "" && email6 != ""){
+        localStorage.setItem("contact6", contact6);
+        localStorage.setItem("email6", email6);
+      };
+    });
+</script>
+</html>
